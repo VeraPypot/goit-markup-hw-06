@@ -65,7 +65,10 @@
             Эффективные решения<br />
             для вашего бизнеса
           </h1>
-          <a class="button primary" href="">Заказать услугу</a>
+          <button data-modal-open class="button primary">
+            Заказать услугу
+          </button>
+          </div>
         </div>
       </section>
 
@@ -526,11 +529,76 @@
         </div>
       </div>
     </footer>
-    <script>
+
+<!-- Модальное окно -->
+
+  <div data-modal class="backdrop is-hidden">
+        <div class="modal">
+  <button type="button" class="form-close" data-modal-close><svg class="form-icon-close">
+    <use href="./img/sprite.svg#close"></use>
+  </svg></button>
+  <h1 class="form-header">
+    Оставьте свои данные, мы вам перезвоним
+  </h1>
+  <form autocomplete="on" class="form data-form">
+  <div class="form-field">
+      <svg class="form-icon">
+        <use href="./img/sprite.svg#name"></use>
+      </svg>
+    <input type="text" class="form-input" name="name" id="name" placeholder=" " autocomplete="name"/>
+       <label for="name" class="form-label">Имя</label>
+  </div>
+  <div class="form-field">
+    <svg class="form-icon">
+      <use href="./img/sprite.svg#tel"></use>
+    </svg>
+    <input type="tel" class="form-input" name="tel" id="tel" placeholder=" " autocomplete="tel"/>
+    <label for="tel" class="form-label">Телефон</label>
+  </div>
+  <div class="form-field">
+    <svg class="form-icon">
+      <use href="./img/sprite.svg#email"></use>
+    </svg>
+    <input type="email" class="form-input" name="mail" id="mail" placeholder=" " autocomplete="email"/>
+    <label for="mail" class="form-label">Почта</label>
+  </div>
+  <div class="form-field">
+  <label for="comment"></label>
+  <textarea class="comment" name="comment" id="comment" rows="5" cols="45" placeholder="Комментарий" autocomplete="off"></textarea>
+  </div>
+
+  <div class="policy">
+  <label class="checkbox-label">
+  <input class="checkbox" type="checkbox" name="policy" value="policy" />
+  <span class="policy-icon">Соглашаюсь с рассылкой и принимаю <a class="policy-link" href="index.html">Условия договора</a></span>
+  </label>
+  </div>
+  <button class="button primary form-submit" type="submit">
+    Отправить
+  </button>
+    
+  </div>
+  </form>
+      <script>
       const { height: pageHeaderHeight } = document
         .querySelector(".page-header")
         .getBoundingClientRect();
       document.body.style.paddingTop = `${pageHeaderHeight}px`;
     </script>
+
+    <script>
+      (() => {
+        document
+          .querySelector(".js-speaker-form")
+          .addEventListener("submit", (e) => {
+            e.preventDefault();
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log("${name}: ${value}")
+            );
+          });
+      })();
+    </script>
+
+    <script src="./js/modal.js"></script>
   </body>
 </html>
