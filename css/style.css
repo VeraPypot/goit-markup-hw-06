@@ -950,7 +950,7 @@ body {
 }
 
 .form-input:focus ~ .form-icon {
-  color: var(--accent-color);
+  fill: var(--accent-color);
 }
 
 .comment {
@@ -965,8 +965,10 @@ body {
 
 .policy {
   display: inline-flex;
-  margin-left: auto;
+  margin-left: 54px;
   margin-right: auto;
+  margin-top: -8px;
+  align-items: center;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -978,26 +980,23 @@ body {
 .policy-icon {
   width: 16px;
   height: 15px;
+  margin-left: 7px;
   border: 0.75px solid var(--primary-text-color);
   border-radius: 2px;
 }
 
 .modal .form-submit {
-  margin-left: auto;
-  margin-right: auto;
-
+  margin-left: 50%;
+  margin-top: 30px;
   padding: 10px 55px;
   align-items: center;
-  margin-left: 50%;
   transform: translateX(-50%);
 }
 
 .checkbox-label {
   display: inline-flex;
   align-items: center;
-  padding-bottom: 30px;
   margin-right: auto;
-  margin-left: auto;
 }
 
 .checkbox {
